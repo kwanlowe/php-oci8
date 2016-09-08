@@ -4,6 +4,7 @@ First pass at building a CentOS based PHP/OCI8 environment.
 
 To use:
 Open the Oracle web page in your browser:
+
         http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html
 
 Download the current versions and copy to the depot/ directory. For licensing
@@ -16,13 +17,16 @@ the depot directory:
 Edit the Dockerfile with the names of the RPMs.
 
 Build the container:
+
         docker build -t centos-php-oci .
 
 Copy your PHP files to the html directory:
+
         mkdir html
         cp index.php html/
 
 Run the container
+
         docker run -d -P -p 8080:80 --name php-oci8 -v html:/var/www/html -i centos-php-oci
 
 
