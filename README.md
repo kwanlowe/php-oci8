@@ -1,5 +1,6 @@
 # php-oci8
 CentOS PHP/OCI8 Docker container
+
 First pass at building a CentOS based PHP/OCI8 environment.
 
 To use:
@@ -29,10 +30,17 @@ Run the container
 
         docker run -d -P -p 8080:80 --name php-oci8 -v html:/var/www/html -i centos-php-oci
 
+TODO:
+
+* Deal with logs
+* Proper oci_connect example. This is pending me setting up an Oracle server :>.
+
 
 Notes:
 Instead of copying the RPMs to the image and installing, you can also make them available
-over the web and install via:  yum -y install http://path/to/xxx.rpm
+over the web and install via:  
+
+ 	yum -y install http://path/to/xxx.rpm
 
 You may also opt to use a tnsnames.ora file. To do so, copy the tnsnames.ora to the 
 appropriate path.
