@@ -31,7 +31,7 @@ Copy your PHP files to the html directory:
 
 Run the container
 
-        docker run -d -P -p 8080:80 --name php-oci8 -v html:/var/www/html -i centos-php-oci
+        docker run -d -P -p 8080:80 --name php-oci8 -v $(pwd)/html:/var/www/html -i centos-php-oci
 
 ## TODO
 
