@@ -6,17 +6,21 @@ CentOS PHP/OCI8 Docker container
 First pass at building a CentOS based PHP/OCI8 environment.
 
 ## Usage
+Clone this repository:
+
+	git clone https://github.com/kwanlowe/php-oci8.git
+	cd php-oci8
 
 Open the Oracle web page in your browser:
 
         http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html
 
 Download the current versions and copy to the depot/ directory. For licensing
-reasons the RPMs cannot be provided elsewhere. Once downloaded, copy them to
+reasons the RPMs cannot be provided here. Once downloaded, copy them to
 the depot directory:
  
-        cp oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm depot/
-        cp oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm depot/
+        cp /PATH_TO_DOWNLOADS/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm depot/
+        cp /PATH_TO_DOWNLOADS/oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm depot/
 
 Edit the Dockerfile with the names of the RPMs.
 
@@ -27,7 +31,7 @@ Build the container:
 Copy your PHP files to the html directory:
 
         mkdir html
-        cp index.php html/
+        cp myapplication.php html/
 
 Run the container
 
@@ -37,7 +41,7 @@ Run the container
 
 * Deal with logs
 * Proper oci_connect example. This is pending me setting up an Oracle server :>.
-
+* Automate copying the RPMs, maybe with build vars or templating.
 
 ## Notes
 
